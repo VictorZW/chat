@@ -1,4 +1,14 @@
 const express = require('express')
+const mongoose = require('mongoose')
+
+const DB_URL = 'mongodb://127.0.0.1:27017'
+
+mongoose.connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
+    if (err)
+        console.error(err);
+    else
+        console.log("Connected to the mongodb");
+})
 
 const app = express()
 
